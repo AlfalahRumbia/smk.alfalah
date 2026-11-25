@@ -2364,6 +2364,129 @@
     grid-column: 1 / -1;
    }
   }
+
+  /* ---------- Visi & Misi (revisi) ---------- */
+  .vm-grid {
+   gap: 24px;
+   align-items: stretch;
+  }
+
+  .vm-card {
+   padding: 44px 44px 40px;
+  }
+
+  .vm-card h3 {
+   font-family: var(--font);
+   font-size: 13px;
+   font-weight: 800;
+   letter-spacing: .22em;
+   text-transform: uppercase;
+   gap: 14px;
+   margin-bottom: 26px;
+  }
+
+  .vm-card h3::after {
+   content: "";
+   flex: 1;
+   height: 1px;
+   background: currentColor;
+   opacity: .25;
+  }
+
+  .vm-card.visi h3 {
+   color: #fbe3e4;
+  }
+
+  .vm-card.misi h3 {
+   color: var(--red-800);
+  }
+
+  .vm-card.visi {
+   display: flex;
+   flex-direction: column;
+  }
+
+  .vm-card.visi::before {
+   content: "\201C";
+   position: absolute;
+   right: 30px;
+   top: 6px;
+   font-family: var(--serif);
+   font-size: 160px;
+   line-height: 1;
+   color: rgba(255, 255, 255, .12);
+  }
+
+  .vm-card.visi p {
+   font-size: 23px;
+   line-height: 1.55;
+   font-weight: 500;
+   color: #fff;
+   position: relative;
+   z-index: 1;
+  }
+
+  .misi ol {
+   gap: 0;
+   counter-reset: m;
+  }
+
+  .misi li {
+   padding: 16px 0;
+   border-bottom: 1px solid var(--line);
+   gap: 18px;
+   align-items: baseline;
+   color: var(--ink);
+   font-size: 16px;
+  }
+
+  .misi li:first-child {
+   padding-top: 0;
+  }
+
+  .misi li:last-child {
+   border-bottom: 0;
+   padding-bottom: 0;
+  }
+
+  .misi li::before {
+   content: counter(m, decimal-leading-zero);
+   width: auto;
+   height: auto;
+   background: none;
+   border-radius: 0;
+   display: block;
+   font-family: var(--serif);
+   font-size: 20px;
+   font-weight: 700;
+   color: var(--red-600);
+   margin: 0;
+   min-width: 28px;
+  }
+
+  @media (max-width: 680px) {
+   .vm-card {
+    padding: 30px 24px;
+   }
+
+   .vm-card.visi p {
+    font-size: 19px;
+   }
+
+   .vm-card.visi::before {
+    font-size: 120px;
+    right: 18px;
+   }
+
+   .misi li {
+    font-size: 15px;
+    gap: 14px;
+   }
+
+   .misi li::before {
+    font-size: 17px;
+   }
+  }
  </style>
 </head>
 
@@ -2606,16 +2729,12 @@
     </div>
     <div class="vm-grid">
      <div class="vm-card visi reveal">
-      <h3><span class="ic"><svg>
-         <use href="#i-star" />
-        </svg></span>Visi</h3>
+      <h3>Visi</h3>
       <p>Mewujudkan santri yang memiliki intelektual, skill, iman dan taqwa, serta berakhlakul karimah berdasarkan
        Ahlussunnah Wal Jama'ah.</p>
      </div>
      <div class="vm-card misi reveal d1">
-      <h3><span class="ic"><svg>
-         <use href="#i-cap" />
-        </svg></span>Misi</h3>
+      <h3>Misi</h3>
       <ol>
        <li>Menyelenggarakan pendidikan bermutu dan berdaya saing.</li>
        <li>Meningkatkan pendidikan yang berwawasan sains dan teknologi informasi modern yang islami.</li>
