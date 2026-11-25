@@ -2251,6 +2251,119 @@
     font-size: 22px;
    }
   }
+
+  /* ---------- Footer & statistik (revisi) ---------- */
+  footer {
+   position: relative;
+  }
+
+  footer::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   height: 4px;
+   background: linear-gradient(90deg, var(--red-600), var(--green-600));
+  }
+
+  footer h4 {
+   position: relative;
+   padding-bottom: 12px;
+  }
+
+  footer h4::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 28px;
+   height: 3px;
+   border-radius: 3px;
+   background: var(--green-600);
+  }
+
+  footer p.foot-about {
+   margin-top: 18px;
+   color: #e9c7c9;
+   line-height: 1.7;
+  }
+
+  .foot-cta {
+   margin-top: 22px;
+   padding: 11px 20px;
+   font-size: 14px;
+  }
+
+  footer li.fc {
+   display: flex;
+   gap: 10px;
+   align-items: flex-start;
+  }
+
+  footer li.fc svg {
+   width: 17px;
+   height: 17px;
+   flex: none;
+   margin-top: 3px;
+   color: #7fe0a9;
+  }
+
+  .foot-bottom {
+   color: #cf9fa3;
+  }
+
+  @media (max-width: 680px) {
+   .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+   }
+
+   .stat {
+    padding: 18px 4px;
+    border-right: 1px solid var(--line) !important;
+    border-bottom: 0 !important;
+   }
+
+   .stat:last-child {
+    border-right: 0 !important;
+   }
+
+   .stat b {
+    font-size: 24px;
+   }
+
+   .stat b sup {
+    font-size: 14px;
+   }
+
+   .stat span {
+    font-size: 10.5px;
+    line-height: 1.3;
+    margin-top: 6px;
+   }
+  }
+
+  @media (max-width: 380px) {
+   .stat b {
+    font-size: 21px;
+   }
+
+   .stat span {
+    font-size: 9.5px;
+   }
+  }
+
+  @media (max-width: 680px) {
+   .foot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px 20px;
+   }
+
+   .foot-grid>div:first-child,
+   .foot-grid>div:last-child {
+    grid-column: 1 / -1;
+   }
+  }
  </style>
 </head>
 
@@ -2928,6 +3041,9 @@
         height="46" loading="lazy"></span>
       <span class="brand-text"><strong>SMK Al Falah</strong><span>Rumbia · Lampung Tengah</span></span>
      </div>
+     <a href="#ppdb" class="btn btn-green foot-cta">Daftar Sekarang <svg>
+       <use href="#i-arrow" />
+      </svg></a>
     </div>
     <div>
      <h4>Menu</h4>
@@ -2950,9 +3066,15 @@
     <div>
      <h4>Hubungi Kami</h4>
      <ul>
-      <li>Teluk Dalem Ilir, Rumbia, Lampung Tengah</li>
-      <li><a href="https://wa.me/6285832155052" target="_blank" rel="noopener">+62 858-3215-5052</a></li>
-      <li>info@smkalfalahrumbia.sch.id</li>
+      <li class="fc"><svg>
+        <use href="#i-pin" />
+       </svg><span>Jl. Minak Brajo Kutan, Teluk Dalem Ilir, Rumbia, Lampung Tengah</span></li>
+      <li class="fc"><svg>
+        <use href="#i-phone" />
+       </svg><a href="https://wa.me/6285832155052" target="_blank" rel="noopener">+62 858-3215-5052</a></li>
+      <li class="fc"><svg>
+        <use href="#i-mail" />
+       </svg><span>info@smkalfalahrumbia.sch.id</span></li>
      </ul>
     </div>
    </div>
